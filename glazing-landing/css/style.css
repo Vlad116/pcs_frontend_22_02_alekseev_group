@@ -1,5 +1,10 @@
+body {
+  background-color: #f2f2f2;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
   margin: auto;
+  background: #ffffff;
 }/*# sourceMappingURL=style.css.map */
