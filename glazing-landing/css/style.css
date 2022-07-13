@@ -1,10 +1,196 @@
+.header {
+  height: 97px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo {
+  margin-right: 44.5px;
+  width: 89.5px;
+  height: 63px;
+}
+.header-nav {
+  height: 100%;
+  margin-right: auto;
+}
+.header-nav-list {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.header-nav-list:first-child {
+  margin-left: 0px;
+}
+.header-nav-list li {
+  align-content: center;
+  padding-left: 20px;
+  display: flex;
+  height: 100%;
+  margin-left: 20px;
+  padding: 0px;
+}
+.header-nav-list li:hover {
+  border-top: 4px solid #ef7f04;
+}
+.header-nav-link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
+}
+li:hover .header-nav-link {
+  color: #ef7f04;
+}
+.header-controls {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+.header-controls button:last-child {
+  margin-left: 14px;
+}
+.header-controls-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 19px 13px 14px;
+  border: 0px;
+  border-radius: 3px;
+}
+.header-controls-btn-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  color: #ffffff;
+}
+.header-controls-icon {
+  margin-right: 14px;
+}
+button:hover .header-controls-icon path {
+  stroke: #3b3a63;
+}
+
+.black {
+  background: #3b3a63;
+}
+.black:hover {
+  background: #2e2d57;
+}
+.black:active {
+  background: #1e1d48;
+}
+
+.orange {
+  background: #ef7f04;
+}
+.orange:hover {
+  background: #c86c0a;
+}
+.orange:active {
+  background: #b36511;
+}
+
+.our-services .section-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #2f2f51;
+}
+.our-services .services {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.our-services .services .service {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  width: calc(50% - 105px);
+  height: 196px;
+  padding: 48px 50px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.our-services .services .service-header {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.our-services .services .service-header-icon {
+  margin-right: 20px;
+}
+.our-services .services .service-header-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+.our-services .services .service-desc {
+  margin-top: 32px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  max-width: 303px;
+  color: #2f2f51;
+}
+.our-services .services .service:nth-child(1) {
+  background-image: url("../images/png/service1-bg.png");
+}
+.our-services .services .service:nth-child(2) {
+  background-image: url("../images/png/service2-bg.jpg");
+}
+.our-services .services .service:nth-child(3) {
+  background-image: url("../images/png/service3-bg.png");
+}
+.our-services .services .service:nth-child(4) {
+  background-image: url("../images/png/service4-bg.png");
+}
+
 body {
   background-color: #f2f2f2;
 }
 
-.wrapper {
+.header-wrapper {
   display: flex;
   justify-content: center;
   margin: auto;
   background: #ffffff;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 68px 360px 78px;
 }/*# sourceMappingURL=style.css.map */

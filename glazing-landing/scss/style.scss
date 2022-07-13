@@ -1,3 +1,5 @@
+@import "./header/header.scss";
+@import "./services/services.scss";
 // .nr-wrapper {
 //   padding: 0px 360px;
 // }
@@ -5,9 +7,15 @@ body {
   background-color: #f2f2f2;
 }
 
-.wrapper {
+.header-wrapper {
   display: flex;
   justify-content: center;
   margin: auto;
   background: #ffffff;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 68px 360px 78px;
 }

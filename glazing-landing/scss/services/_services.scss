@@ -1,0 +1,80 @@
+.our-services {
+  .section-title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #2f2f51;
+  }
+
+  .services {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+
+    .service {
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      border-radius: 3px;
+      width: calc(50% - 105px);
+      height: 196px;
+      padding: 48px 50px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      &-header {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &-icon {
+          margin-right: 20px;
+        }
+        &-title {
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+      &-desc {
+        margin-top: 32px;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        max-width: 303px;
+
+        color: #2f2f51;
+      }
+    }
+
+    .service:nth-child(1) {
+      background-image: url("../images/png/service1-bg.png");
+    }
+
+    .service:nth-child(2) {
+      background-image: url("../images/png/service2-bg.jpg");
+    }
+
+    .service:nth-child(3) {
+      background-image: url("../images/png/service3-bg.png");
+    }
+
+    .service:nth-child(4) {
+      background-image: url("../images/png/service4-bg.png");
+    }
+  }
+}
