@@ -9,43 +9,43 @@
       type="text/css"
       href="http://meyerweb.com/eric/tools/css/reset/reset.css"
     />
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="header-wrapper">
-      <header class="header">
+    <header class="header">
+      <div class="header__wrapper">
         <!-- <div class=""></div> -->
         <img src="./images/svg/headerLogo.svg" class="header-logo" />
         <nav class="header-nav">
-          <ul class="header-nav-list">
+          <ul class="header-nav__list">
             <li>
-              <a class="header-nav-link">Услуги</a>
+              <a class="header-nav__link">Услуги</a>
             </li>
             <li>
-              <a class="header-nav-link">Продукция</a>
+              <a class="header-nav__link">Продукция</a>
             </li>
             <li>
-              <a class="header-nav-link">О компании</a>
+              <a class="header-nav__link">О компании</a>
             </li>
             <li>
-              <a class="header-nav-link">Портфолио</a>
+              <a class="header-nav__link">Портфолио</a>
             </li>
             <li>
-              <a class="header-nav-link">Вопрос-ответ</a>
+              <a class="header-nav__link">Вопрос-ответ</a>
             </li>
             <li>
-              <a class="header-nav-link">Контакты</a>
+              <a class="header-nav__link">Контакты</a>
             </li>
           </ul>
         </nav>
         <div class="header-controls">
-          <button class="header-controls-btn orange">
+          <button class="btn btn_orange">
             <!-- <img
               src="./images/svg/btnIconOrder.svg"
               class="header-controls-icon"
             /> -->
             <svg
-              class="header-controls-icon"
+              class="btn__icon"
               width="23"
               height="20"
               viewBox="0 0 23 20"
@@ -110,18 +110,66 @@
               />
             </svg>
 
-            <span class="header-controls-btn-text">Заявка на замер</span>
+            <span class="btn__text">Заявка на замер</span>
           </button>
-          <button class="header-controls-btn black">
-            <img
-              src="./images/svg/btnIconCalc.svg"
-              class="header-controls-icon"
-            />
-            <span class="header-controls-btn-text">Заявка на рассчет</span>
+          <button class="btn btn_black">
+            <img src="./images/svg/btnIconCalc.svg" class="btn__icon" />
+            <span class="btn__text">Заявка на рассчет</span>
           </button>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
+    <section class="banner">
+      <div class="banner-description">
+        <h1 class="banner-description__title">
+          <span class="banner-description__company-name">Окна Хаус -</span>
+          Профессиональный подход к остеклению
+        </h1>
+      </div>
+      <form class="banner-form">
+        <h3 class="banner-form__title">Вызвать замерщика на дом</h3>
+        <input
+          type="text"
+          placeholder="Представьтесь, пожалуйста"
+          class="banner-form__input"
+        />
+        <input
+          type="tel"
+          placeholder="Номер телефона"
+          class="banner-form__input"
+        />
+        <input type="email" placeholder="E-mail" class="banner-form__input" />
+        <div class="banner-form-checkbox">
+          <input
+            id="form-checkbox"
+            type="checkbox"
+            class="banner-form-checkbox__input"
+          />
+          <label for="form-checkbox" class="banner-form-checkbox__label">
+            <svg
+              class="banner-form-checkbox__checkmark"
+              width="23"
+              height="24"
+              viewBox="0 0 23 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.5 15L8.5 22L21.5 1"
+                stroke="#2F2F51"
+                stroke-width="2"
+              />
+            </svg>
+            <p class="banner-form-checkbox__label-text">
+              Согласен на обработку персональных данных в соответствии с
+              <a href="#">политикой конфиденциальности</a>
+            </p>
+          </label>
+        </div>
+        <button class="btn btn_orange btn_banner-form">Отправить заявку</button>
+        <img class="banner-form__illustration" src="./images/png/ruller.png">
+      </form>
+    </section>
     <main class="main-wrapper">
       <section class="our-services">
         <h2 class="section-title">Наши услуги</h2>

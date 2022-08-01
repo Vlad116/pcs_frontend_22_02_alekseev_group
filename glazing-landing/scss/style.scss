@@ -1,21 +1,91 @@
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "./fonts/fonts";
+@import "./colors/colors";
+@import "./mixin/fontStyle";
 @import "./header/header.scss";
 @import "./services/services.scss";
+@import "./banner/banner.scss";
+
 // .nr-wrapper {
 //   padding: 0px 360px;
 // }
-body {
-  background-color: #f2f2f2;
+
+html {
+  font-size: 10px;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 16px;
+  }
 }
 
-.header-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  background: #ffffff;
+body {
+  background-color: $background-color;
+  font-family: "Roboto", sans-serif;
 }
 
 .main-wrapper {
   display: flex;
   justify-content: center;
   padding: 68px 360px 78px;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 12px 19px 13px 14px;
+  border: 0px;
+  border-radius: 3px;
+
+  &__text {
+    // font-family: "Roboto";
+    // font-style: normal;
+    @include fontProps(13px, $white);
+    font-weight: 700;
+  }
+  &__icon {
+    margin-right: 14px;
+
+    button:hover & {
+      path {
+        stroke: #3b3a63;
+      }
+    }
+  }
+
+  &_black {
+    background: $dark-blue;
+
+    &:hover {
+      background: #2e2d57;
+    }
+
+    &:active {
+      background: #1e1d48;
+    }
+  }
+
+  &_orange {
+    background: $orange;
+    &:hover {
+      background: #c86c0a;
+    }
+
+    &:active {
+      background: #b36511;
+    }
+  }
+
+  &_banner-form {
+    padding: 19.25px 40px;
+
+    @include fontProps(14px, $white);
+    font-weight: 700;
+  }
 }

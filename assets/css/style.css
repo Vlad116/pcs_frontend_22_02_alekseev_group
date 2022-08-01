@@ -1,4 +1,22 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto"), local("Roboto-Bold"), url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
 .header {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background: #ffffff;
+}
+.header__wrapper {
   height: 97px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -17,15 +35,15 @@
   height: 100%;
   margin-right: auto;
 }
-.header-nav-list {
+.header-nav__list {
   display: flex;
   flex-direction: row;
   height: 100%;
 }
-.header-nav-list:first-child {
+.header-nav__list:first-child {
   margin-left: 0px;
 }
-.header-nav-list li {
+.header-nav__list li {
   align-content: center;
   padding-left: 20px;
   display: flex;
@@ -33,10 +51,10 @@
   margin-left: 20px;
   padding: 0px;
 }
-.header-nav-list li:hover {
-  border-top: 4px solid #ef7f04;
+.header-nav__list li:hover {
+  border-top: 4px solid #a14b00;
 }
-.header-nav-link {
+.header-nav__link {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -47,18 +65,18 @@
   height: fit-content;
   align-self: center;
 }
-li:hover .header-nav-link {
-  color: #ef7f04;
+li:hover .header-nav__link {
+  color: #a14b00;
 }
 .header-controls {
   display: flex;
   flex-direction: row;
   margin-left: 20px;
 }
-.header-controls button:last-child {
+.header-controls .btn:last-child {
   margin-left: 14px;
 }
-.header-controls-btn {
+.header-controls .btn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -72,7 +90,7 @@ li:hover .header-nav-link {
   border: 0px;
   border-radius: 3px;
 }
-.header-controls-btn-text {
+.header-controls .btn__text {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -80,30 +98,28 @@ li:hover .header-nav-link {
   line-height: 15px;
   color: #ffffff;
 }
-.header-controls-icon {
+.header-controls .btn__icon {
   margin-right: 14px;
 }
-button:hover .header-controls-icon path {
+button:hover .header-controls .btn__icon path {
   stroke: #3b3a63;
 }
-
-.black {
+.header-controls .btn_black {
   background: #3b3a63;
 }
-.black:hover {
+.header-controls .btn_black:hover {
   background: #2e2d57;
 }
-.black:active {
+.header-controls .btn_black:active {
   background: #1e1d48;
 }
-
-.orange {
-  background: #ef7f04;
+.header-controls .btn_orange {
+  background: #a14b00;
 }
-.orange:hover {
+.header-controls .btn_orange:hover {
   background: #c86c0a;
 }
-.orange:active {
+.header-controls .btn_orange:active {
   background: #b36511;
 }
 
@@ -152,15 +168,15 @@ button:hover .header-controls-icon path {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 28px;
 }
 .our-services .services .service-desc {
-  margin-top: 32px;
+  margin-top: 2em;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 19px;
   max-width: 303px;
   color: #2f2f51;
@@ -178,15 +194,46 @@ button:hover .header-controls-icon path {
   background-image: url("../images/png/service4-bg.png");
 }
 
-body {
-  background-color: #f2f2f2;
+.banner-form-checbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.banner-form-checbox__input :checked + p::before {
+  background-image: url(../../images/svg/checked.svg);
+}
+.banner-form-checbox__label {
+  display: inline-flex;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.banner-form-checbox__label::before {
+  width: 25px;
+  height: 25px;
+  background: #e2e2e2;
+  border-radius: 3px;
 }
 
-.header-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  background: #ffffff;
+html {
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1280px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Roboto", sans-serif;
 }
 
 .main-wrapper {

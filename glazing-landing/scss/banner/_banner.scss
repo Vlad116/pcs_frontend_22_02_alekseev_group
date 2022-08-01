@@ -1,0 +1,143 @@
+@import "../mixin/fontStyle";
+
+.banner {
+  padding: 64px 444px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-description {
+    &__title {
+    }
+    &__company-name {
+    }
+  }
+  &-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    width: 406px;
+    padding: 43px 43.5px 65px 40px;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    &__title {
+      @include fontProps(18px, #2f2f51);
+      font-weight: 700;
+      margin-bottom: 27px;
+    }
+
+    &__input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 15px;
+      background: #e2e2e2;
+      border-radius: 3px;
+      border: none;
+      padding: 12px 16px;
+
+      @include fontProps(14px, #393952);
+
+      ::placeholder {
+        @include fontProps(14px, #424268);
+      }
+    }
+
+    &__input:first-child {
+      margin-top: 0;
+    }
+
+    &-checkbox {
+      font-size: 0.75em;
+      vertical-align: middle;
+      margin-top: 1.5em;
+      display: inline-flex;
+      width: 100%;
+
+      &__input:checked + &__label &__checkmark {
+        height: 21px;
+        animation: draw-checkmark ease-in-out 0.2s forwards;
+      }
+
+      &__input:checked + &__label::before {
+        background-color: #d4d3d3;
+      }
+
+      &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+      &__label {
+        color: black;
+        line-height: 14px;
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          position: relative;
+          text-align: center;
+          width: 25px;
+          height: 25px;
+          background-color: #e2e2e2;
+          border-radius: 3px;
+          margin-right: 10px;
+        }
+
+        &:active::before {
+          background-color: #d4d3d3;
+        }
+
+        &-text {
+          display: inline;
+          width: fit-content;
+          user-select: none;
+          position: absolute;
+          left: 35px;
+          top: 0px;
+
+          & > a {
+            text-decoration: none;
+            color: #4b67af;
+          }
+        }
+      }
+
+      &__checkmark {
+        height: 0;
+        width: 20px;
+        position: absolute;
+        left: 5.5px;
+        top: -3.5px;
+        stroke-dasharray: 36; //Firefox fix
+      }
+    }
+
+    .btn_banner-form {
+      margin-top: 24px;
+    }
+
+    &__illustration {
+      position: absolute;
+      z-index: 1;
+      bottom: -54px;
+      left: -89px;
+    }
+  }
+}
+
+@keyframes draw-checkmark {
+  0% {
+    stroke-dashoffset: 36;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
