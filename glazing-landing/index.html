@@ -39,7 +39,10 @@
           </ul>
         </nav>
         <div class="header-controls">
-          <button class="btn btn_orange">
+          <button
+            class="btn btn_orange"
+            onclick="console.log('Заявка на замер')"
+          >
             <!-- <img
               src="./images/svg/btnIconOrder.svg"
               class="header-controls-icon"
@@ -120,12 +123,26 @@
       </div>
     </header>
     <section class="banner">
-      <div class="banner-description">
+      <!-- <div class="banner-description">
         <h1 class="banner-description__title">
           <span class="banner-description__company-name">Окна Хаус -</span>
           Профессиональный подход к остеклению
         </h1>
-      </div>
+        <div class="banner-description-benefits">
+          <div class="banner-description-benefits__card">
+            <img src="./assets/images/window.svg" alt="" />
+            <p>Современные окна и балконные конструкции по доступным ценам</p>
+          </div>
+          <div class="banner-description-benefits__card">
+            <img src="./assets/images/skilled.svg" alt="" />
+            <p>Квалифицированный подход к решению задач любой сложности</p>
+          </div>
+          <div class="banner-description-benefits__card">
+            <img src="./assets/images/guarantee.svg" alt="" />
+            <p>Гарантия высочайшего качества нашей продукции</p>
+          </div>
+        </div>
+      </div> -->
       <form class="banner-form">
         <h3 class="banner-form__title">Вызвать замерщика на дом</h3>
         <input
@@ -167,7 +184,7 @@
           </label>
         </div>
         <button class="btn btn_orange btn_banner-form">Отправить заявку</button>
-        <img class="banner-form__illustration" src="./images/png/ruller.png">
+        <img class="banner-form__illustration" src="./images/png/ruller.png" />
       </form>
     </section>
     <main class="main-wrapper">
@@ -221,4 +238,21 @@
       </section>
     </main>
   </body>
+  <script>
+    let number = 1;
+
+    number = number + 100;
+    number += 100;
+
+    console.log(number);
+    console.log(typeof number);
+
+    // string
+    number = "Hello world!";
+
+    console.log(number);
+
+    console.log(typeof number);
+  </script>
+  <script src="./script.js"></script>
 </html>

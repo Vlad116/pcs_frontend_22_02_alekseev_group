@@ -8,8 +8,36 @@
 
   &-description {
     &__title {
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: 100;
+
+      line-height: 42px;
+      margin-bottom: 20px;
+      max-width: 511px;
+      margin-bottom: 35px;
+      margin-right: 52px;
     }
     &__company-name {
+      display: block;
+      color: #ef7f04;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28px;
+      margin-bottom: 15px;
+    }
+    &-benefits {
+      display: flex;
+      column-gap: 30px;
+      align-items: end;
+      &__card {
+        display: block;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        max-width: 200px;
+      }
     }
   }
   &-form {
