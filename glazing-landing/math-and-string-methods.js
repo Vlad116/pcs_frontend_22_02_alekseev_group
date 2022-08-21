@@ -2,9 +2,11 @@
 
 let counter = 0;
 
-// counter = counter + 1;
+// 3 равноценных записи:
 
+// counter = counter + 1;
 // counter += 1;
+//  ++counter;
 
 // Инкремент
 
