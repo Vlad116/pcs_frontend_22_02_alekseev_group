@@ -146,3 +146,15 @@ for (row of map) {
 // for (let row = 0; row < map.length; row++) {
 //   for (let column = 0; column < map.length; column++) {}
 // }
+let amount;
+
+while (true) {
+  amount = +prompt("Зарплата: ");
+
+  if (isNaN(amount)) {
+    console.log();
+  } else {
+    console.log();
+    break;
+  }
+}

@@ -133,3 +133,69 @@ const orangeBtnCounter = createBtnCounter("button.btn_orange");
 const blackBtnCounter = createBtnCounter("button.btn_black");
 
 console.log(orangeBtnCounter.getCount());
+
+const getRandomInt = (max) => {
+  return Math.floor(Math.random() * max);
+};
+
+// случайное целое число от 0 до 10
+getRandomInt(11);
+
+//счётчик (количество попыток)
+function minusStep(attemptCounter = 5) {
+  let counter = attemptCounter;
+  return function () {
+    // alert(`Осталось попыток: ${counter} `);
+    if (counter > 0) {
+      counter--;
+    }
+    return counter;
+  };
+}
+
+function createNewGame() {
+  const createNewGame = confirm("Новую игру?");
+
+  if (createNewGame) {
+    const attempt = prompt("Кол-во попыток");
+    createPredictNumberBot(attempt)();
+  }
+}
+
+function createPredictNumberBot(attemptCounter = 5) {
+  const a = getRandomInt(11);
+  const attempt = minusStep(attemptCounter);
+
+  const predictNumberBot = () => {
+    let b = +prompt("Угадай число от 1 до 10");
+
+    if (b === null) {
+      return;
+    } else if (isNaN(b)) {
+      alert("Введите число!!!");
+      predictNumberBot();
+    } else if (a === +b) {
+      alert("Вы угадали, Поздравляю!!!");
+      createNewGame();
+    } else if (a > +b) {
+      const attemptCounter = attempt();
+      alert(
+        `Загаданное число,больше! У вас осталось ${attemptCounter} попыток.`
+      );
+      if (attemptCounter === 0) createNewGame();
+    } else if (a < +b) {
+      const attemptCounter = attempt();
+      alert(
+        `Загаданное число, меньше! У вас осталось ${attemptCounter} попыток.`
+      );
+      if (attemptCounter === 0) createNewGame();
+    } else if (+b !== typeof "number") {
+      alert("Введите число!!!");
+      predictNumberBot();
+    }
+  };
+
+  return predictNumberBot;
+}
+
+createPredictNumberBot()();
