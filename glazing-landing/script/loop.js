@@ -148,13 +148,38 @@ for (row of map) {
 // }
 let amount;
 
-while (true) {
-  amount = +prompt("Зарплата: ");
+// while (true) {
+//   amount = +prompt("Зарплата: ");
 
-  if (isNaN(amount)) {
-    console.log();
+//   if (isNaN(amount)) {
+//     alert("Введите число");
+//   } else {
+//     alert(`Введено число ${amount}`);
+//     break;
+//   }
+// }
+
+let amountSecond = +prompt("Зарплата: ");
+
+while (isNaN(amountSecond)) {
+  amountSecond = +prompt("Зарплата: ");
+  alert(isNaN(amountSecond));
+  if (isNaN(amountSecond)) {
+    alert("Введите число");
   } else {
-    console.log();
-    break;
+    alert(`Введено число ${amountSecond}`);
   }
 }
+
+const purpose = 14000;
+const getTargetMonth = (purpose, amount) => purpose / amount;
+
+const targetMonth = getTargetMonth(purpose, 500);
+
+console.log(
+  `Ваша цель накопить ${purpose} с учетом всех ваших расходов ${
+    targetMonth < 0
+      ? "цель не будет достигнута"
+      : `будет достигнута через ${targetMonth} месяца`
+  }`
+);
