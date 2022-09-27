@@ -1,4 +1,4 @@
-const apiHost = "https://fakestoreapi.com";
+const apiHost = 'https://fakestoreapi.com';
 
 async function getProducts() {
   const products = fetch(`${apiHost}/products`)
