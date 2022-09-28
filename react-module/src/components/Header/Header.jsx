@@ -25,6 +25,7 @@ const Header = (props) => {
 
 Header.propTypes = {
   selectedProducts: PropTypes.arrayOf(shape({})).isRequired,
+  handleRemoveProduct: PropTypes.func.isRequired,
   orderSum: PropTypes.number.isRequired,
 };
 

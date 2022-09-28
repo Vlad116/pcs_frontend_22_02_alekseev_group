@@ -10,7 +10,7 @@ const ProductCard = ({
   img,
   price,
   weight,
-  onAddProduct,
+  handleAddProduct,
 }) => {
   return (
     <div className={s.root}>
@@ -25,7 +25,7 @@ const ProductCard = ({
         <button
           className={s.footer__add_btn}
           onClick={() =>
-            onAddProduct({
+            handleAddProduct({
               id,
               name,
               description,
@@ -76,7 +76,7 @@ ProductCard.propTypes = {
   img: PropTypes.string,
   price: PropTypes.number.isRequired,
   weight: PropTypes.number.isRequired,
-  onAddProduct: PropTypes.func.isRequired,
+  handleAddProduct: PropTypes.func.isRequired,
 };
 
 ProductCard.defaultProps = {

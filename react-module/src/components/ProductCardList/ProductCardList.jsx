@@ -5,12 +5,12 @@ import ProductCard from "../ProductCard";
 import { products } from "./static.js";
 import s from "./ProductCardList.module.scss";
 
-const ProductCardList = ({ onAddProduct }) => {
+const ProductCardList = ({ handleAddProduct }) => {
   return (
     <div className={s.root}>
       {products.map(({ name, description, img, price, weight, id }) => (
         <ProductCard
-          onAddProduct={onAddProduct}
+          handleAddProduct={handleAddProduct}
           name={name}
           description={description}
           img={img}
@@ -25,7 +25,7 @@ const ProductCardList = ({ onAddProduct }) => {
 };
 
 ProductCardList.propTypes = {
-  onAddProduct: PropTypes.func,
+  hadleAddProduct: PropTypes.func,
 };
 
 export default ProductCardList;
