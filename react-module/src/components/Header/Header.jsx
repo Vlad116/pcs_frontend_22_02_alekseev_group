@@ -2,11 +2,18 @@ import React from "react";
 import PropTypes, { shape } from "prop-types";
 
 import s from "./Header.module.scss";
-import CartModal from "../CartModal";
+import CartIcon from "../../resource/icons/cart.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = (props) => {
   const { selectedProducts, orderSum } = props;
-  // selectedProducts.reduce((acc, value) => (acc += value.price), 0)
+
+  // const navigate = useNavigate();
+
+  // const buttonHandler = () => {
+  //   navigate("/basket");
+  // };
+
   return (
     <header className={s.root}>
       <div className={s.root__inner}>
@@ -16,7 +23,12 @@ const Header = (props) => {
             {selectedProducts.length} товар {"\n"}
             на суммму {orderSum} ₽
           </p>
-          <CartModal {...props} />
+          <Link to={"/basket"} className={s.root_cart__button}>
+            <img className={s.root_cart__icon} src={CartIcon} />
+          </Link>
+          {/* <button className={s.root_cart__button} onClick={buttonHandler}>
+            <img className={s.root_cart__icon} src={CartIcon} />
+          </button> */}
         </div>
       </div>
     </header>

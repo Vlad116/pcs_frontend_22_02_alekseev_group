@@ -1,45 +1,22 @@
 // import logo from "./logo.svg";
-import { ReactDOM, useState } from "react";
+import React, { useState } from "react";
 
-import Header from "./Header";
-import ProductCardList from "./ProductCardList";
-
-import hashCode from "../utils/hashCode";
 import s from "./App.module.scss";
+import { Route, Routes } from "react-router-dom";
+import Main from "../pages/main";
+import Basket from "../pages/basket";
+import ProductCard from "./ProductCard";
 
 function App() {
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  const [orderSum, setOrderSum] = useState(0);
-
-  const handleAddProduct = (product) => {
-    setOrderSum(orderSum + +product.price);
-    const productInOrder = product;
-    productInOrder.id = `${product.id}__${hashCode()}`;
-    setSelectedProducts([...selectedProducts, product]);
-  };
-
-  const handleRemoveProduct = (toRemoveId, price) => {
-    setOrderSum(orderSum - +price);
-
-    const resultArr = selectedProducts.filter(
-      (value) => value.id !== toRemoveId
-    );
-
-    setSelectedProducts(resultArr);
-  };
-
-  console.log(selectedProducts);
-
   return (
     <div className={s.root}>
-      <div className={s.root__wrapper}>
-        <Header
-          selectedProducts={selectedProducts}
-          orderSum={orderSum}
-          handleRemoveProduct={handleRemoveProduct}
-        />
-        <ProductCardList handleAddProduct={handleAddProduct} />
-      </div>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/basket" element={<Basket />} />
+        <Route path="/product/:id" element={<ProductCard />} />
+      </Routes>
+      {/* <div className={s.root__wrapper}> */}
+      {/* </div> */}
     </div>
   );
 }

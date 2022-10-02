@@ -4,7 +4,7 @@ import { ReactComponent as BtnAddIcon } from "../../resource/icons/btn-add.svg";
 import s from "./ProductCard.module.scss";
 import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({
+const Product = ({
   id,
   name,
   description,
@@ -77,7 +77,7 @@ const ProductCard = ({
 //   }
 // }
 
-ProductCard.propTypes = {
+Product.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
@@ -87,9 +87,9 @@ ProductCard.propTypes = {
   handleAddProduct: PropTypes.func.isRequired,
 };
 
-ProductCard.defaultProps = {
+Product.defaultProps = {
   description: "",
   img: "",
 };
 
-export default ProductCard;
+export default Product;
