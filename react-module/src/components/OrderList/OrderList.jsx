@@ -5,6 +5,8 @@ import RemoveIcon from "../../resource/icons/btn-remove.svg";
 import s from "./OrderList.module.scss";
 
 const OrderList = ({ selectedProducts, handleRemoveProduct }) => {
+  if (selectedProducts.lenght === 0) return null;
+
   return (
     <div className={s.root}>
       <div className={s.root__wrapper}>

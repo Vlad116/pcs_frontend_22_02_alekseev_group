@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #161516;
-  max-height: 100%;
+  height: 100vh;
 
   & .nr_wrapper {
     padding-top: 54px;

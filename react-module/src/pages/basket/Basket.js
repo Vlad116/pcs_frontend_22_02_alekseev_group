@@ -7,10 +7,7 @@ import BackIcon from "../../resource/icons/back-arrow.svg";
 
 import s from "./Basket.module.scss";
 
-// selectedProducts, handleRemoveProduct, orderSum
-// handleClose
-
-function Basket() {
+function Basket({ selectedProducts, orderSum, handleRemoveProduct }) {
   return (
     <div className={s.root}>
       <div className={s.nr_wrapper}>
@@ -23,17 +20,15 @@ function Basket() {
           </h1>
         </div>
         <OrderList
-          selectedProducts={[]}
-          handleRemoveProduct={() => {}}
-          // selectedProducts={selectedProducts}
-          // handleRemoveProduct={handleRemoveProduct}
+          selectedProducts={selectedProducts}
+          handleRemoveProduct={handleRemoveProduct}
         />
       </div>
       <div className={s.footer}>
         <div className={s.nr_wrapper}>
           <p className={s.footer__text}>
             заказ на суммму:
-            {/* <span className={s.footer__order_price}>{orderSum} ₽</span> */}
+            <span className={s.footer__order_price}>{orderSum} ₽</span>
           </p>
           <button className={s.footer__send_order}>Оформить заказ</button>
         </div>
