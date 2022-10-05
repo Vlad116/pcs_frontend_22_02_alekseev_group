@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import OrderList from "../../components/OrderList";
 
@@ -7,7 +8,9 @@ import BackIcon from "../../resource/icons/back-arrow.svg";
 
 import s from "./Basket.module.scss";
 
-function Basket({ selectedProducts, orderSum, handleRemoveProduct }) {
+function Basket() {
+  const orderSum = useSelector((state) => state.orderSum.sum);
+
   return (
     <div className={s.root}>
       <div className={s.nr_wrapper}>
@@ -19,10 +22,7 @@ function Basket({ selectedProducts, orderSum, handleRemoveProduct }) {
             Корзина с выбранными товарами
           </h1>
         </div>
-        <OrderList
-          selectedProducts={selectedProducts}
-          handleRemoveProduct={handleRemoveProduct}
-        />
+        <OrderList />
       </div>
       <div className={s.footer}>
         <div className={s.nr_wrapper}>

@@ -4,8 +4,22 @@ import PropTypes from "prop-types";
 import RemoveIcon from "../../resource/icons/btn-remove.svg";
 import s from "./OrderList.module.scss";
 
-const OrderList = ({ selectedProducts, handleRemoveProduct }) => {
+import { useSelector, useDispatch } from "react-redux";
+import { remove } from "../../features/selectedProductsList/selectedProductsListSlice";
+import { decrease } from "../../features/orderSum/orderSumSlice";
+
+const OrderList = () => {
+  const selectedProducts = useSelector(
+    (state) => state.selectedProductList.list
+  );
+  const dispatch = useDispatch();
+
   if (selectedProducts.lenght === 0) return null;
+
+  const handleRemoveFromSelectedClick = (id, price) => {
+    dispatch(decrease(price));
+    dispatch(remove(id));
+  };
 
   return (
     <div className={s.root}>
@@ -17,7 +31,7 @@ const OrderList = ({ selectedProducts, handleRemoveProduct }) => {
             <div className={s.root_product__price}>{price}₽</div>
             <button
               className={s.root_product__remove_btn}
-              onClick={() => handleRemoveProduct(id, price)}
+              onClick={() => handleRemoveFromSelectedClick(id, price)}
             >
               <img src={RemoveIcon} />
             </button>
@@ -26,11 +40,6 @@ const OrderList = ({ selectedProducts, handleRemoveProduct }) => {
       </div>
     </div>
   );
-};
-
-OrderList.propTypes = {
-  selectedProducts: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  handleRemoveProduct: PropTypes.func.isRequired,
 };
 
 export default OrderList;

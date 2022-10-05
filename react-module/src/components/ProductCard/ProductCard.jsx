@@ -1,19 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as BtnAddIcon } from "../../resource/icons/btn-add.svg";
-import s from "./ProductCard.module.scss";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-const ProductCard = ({
-  id,
-  name,
-  description,
-  img,
-  price,
-  weight,
-  handleAddProduct,
-}) => {
+import {
+  add,
+  getOrderSum,
+} from "../../features/selectedProductsList/selectedProductsListSlice";
+import { ReactComponent as BtnAddIcon } from "../../resource/icons/btn-add.svg";
+
+import s from "./ProductCard.module.scss";
+import { increase } from "../../features/orderSum/orderSumSlice";
+
+const ProductCard = ({ id, name, description, img, price, weight }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleAddToBasketClick = () => {
+    dispatch(
+      add({
+        id,
+        name,
+        description,
+        img,
+        price,
+        weight,
+      })
+    );
+    dispatch(increase(price));
+  };
 
   return (
     <div className={s.root}>
@@ -30,52 +44,13 @@ const ProductCard = ({
           {price}₽ /{" "}
           <span className={s.footer_pricetag__weight}>{weight} г.</span>
         </div>
-        <button
-          className={s.footer__add_btn}
-          onClick={() =>
-            handleAddProduct({
-              id,
-              name,
-              description,
-              img,
-              price,
-              weight,
-            })
-          }
-        >
+        <button className={s.footer__add_btn} onClick={handleAddToBasketClick}>
           <BtnAddIcon />
         </button>
       </div>
     </div>
   );
 };
-
-// class ProductCard extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     return (
-//       <div className="product-card">
-//         <img src={cardImage} />
-//         <h2 className="product-card__title">title</h2>
-//         <p className="product-card__description">description</p>
-//         <div>
-//           <div className="product-card-footer__pricetag">
-//             {price} /{" "}
-//             <span className="product-card-footer__pricetag-weight">
-//               {weight}
-//             </span>
-//           </div>
-//           <button className="product-card-footer__add-btn">
-//             <BtnAddIcon />
-//           </button>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
 
 ProductCard.propTypes = {
   id: PropTypes.string.isRequired,
@@ -84,7 +59,6 @@ ProductCard.propTypes = {
   img: PropTypes.string,
   price: PropTypes.number.isRequired,
   weight: PropTypes.number.isRequired,
-  handleAddProduct: PropTypes.func.isRequired,
 };
 
 ProductCard.defaultProps = {
