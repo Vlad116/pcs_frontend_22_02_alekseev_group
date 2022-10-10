@@ -9,7 +9,7 @@ const Header = () => {
   const selectedProducts = useSelector(
     (state) => state.selectedProductList.list
   );
-  const orderSum = useSelector((state) => state.selectedProductList.orderSum);
+  const orderSum = useSelector((state) => state.orderSum.sum);
 
   return (
     <header className={s.root}>

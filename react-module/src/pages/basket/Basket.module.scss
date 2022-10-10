@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    padding: 52px 64px 0px;
 
     &_back {
       width: 30px;
@@ -52,6 +53,7 @@
   .footer {
     border-top: 1px solid #d58c51;
     width: 100%;
+    padding-inline: 20vw;
 
     & .nr_wrapper {
       padding-block: 20px 28px;
@@ -88,8 +90,4 @@
       color: #131313;
     }
   }
-}
-
-.nr_wrapper {
-  padding-inline: 290px;
 }

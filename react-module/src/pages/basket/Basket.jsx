@@ -13,17 +13,15 @@ function Basket() {
 
   return (
     <div className={s.root}>
-      <div className={s.nr_wrapper}>
-        <div className={s.root__header}>
-          <Link to={"/"} className={s.root__header_back}>
-            <img src={BackIcon} />
-          </Link>
-          <h1 className={s.root__header_title}>
-            Корзина с выбранными товарами
-          </h1>
-        </div>
-        <OrderList />
+      {/* <div className={s.nr_wrapper}> */}
+      <div className={s.root__header}>
+        <Link to={"/"} className={s.root__header_back}>
+          <img src={BackIcon} />
+        </Link>
+        <h1 className={s.root__header_title}>Корзина с выбранными товарами</h1>
       </div>
+      <OrderList />
+      {/* </div> */}
       <div className={s.footer}>
         <div className={s.nr_wrapper}>
           <p className={s.footer__text}>
