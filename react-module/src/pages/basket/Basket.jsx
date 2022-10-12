@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import OrderList from "../../components/OrderList";
@@ -11,13 +11,18 @@ import s from "./Basket.module.scss";
 function Basket() {
   const orderSum = useSelector((state) => state.orderSum.sum);
 
+  const navigate = useNavigate();
+  const moveBack = () => navigate(-1);
+
   return (
     <div className={s.root}>
       {/* <div className={s.nr_wrapper}> */}
       <div className={s.root__header}>
-        <Link to={"/"} className={s.root__header_back}>
-          <img src={BackIcon} />
-        </Link>
+        <img
+          src={BackIcon}
+          className={s.root__header_back}
+          onClick={moveBack}
+        />
         <h1 className={s.root__header_title}>Корзина с выбранными товарами</h1>
       </div>
       <OrderList />

@@ -1,12 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import RemoveIcon from "../../resource/icons/btn-remove.svg";
 import s from "./OrderList.module.scss";
 
-import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../../features/selectedProductsList/selectedProductsListSlice";
 import { decrease } from "../../features/orderSum/orderSumSlice";
-import { useNavigate } from "react-router-dom";
 
 const OrderList = () => {
   const navigate = useNavigate();
@@ -22,19 +22,21 @@ const OrderList = () => {
     dispatch(remove(id));
   };
 
+  const handleRedirectToProductPage = (id) => navigate(`/product/${id}`);
+
   return (
     <div className={s.root}>
       <div className={s.root__wrapper}>
-        {selectedProducts.map(({ name, img, price, id }) => (
+        {selectedProducts.map(({ name, img, price, id, productId }) => (
           <div className={s.root_product} key={id}>
             <img
-              onClick={() => navigate(`/product/${id}`)}
+              onClick={() => handleRedirectToProductPage(id)}
               className={s.root_product__img}
               src={img}
               alt={name}
             />{" "}
             <h2
-              onClick={() => navigate(`/product/${id}`)}
+              onClick={() => handleRedirectToProductPage(id)}
               className={s.root_product__title}
             >
               {name}

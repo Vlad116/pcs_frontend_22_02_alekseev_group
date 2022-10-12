@@ -9,10 +9,10 @@ export const orderSum = createSlice({
   initialState,
   reducers: {
     increase: (state, action) => {
-      state.sum += +action.payload;
+      state.sum += action.payload;
     },
     decrease: (state, action) => {
-      state.sum -= +action.payload;
+      state.sum -= action.payload;
     },
   },
 });

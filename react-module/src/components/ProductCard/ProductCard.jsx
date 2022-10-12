@@ -29,15 +29,19 @@ const ProductCard = ({ id, name, description, img, price, weight }) => {
     dispatch(increase(price));
   };
 
+  const handleRedirectToProductPage = () => navigate(`/product/${id}`);
+
   return (
     <div className={s.root}>
       <img
         className={s.root__img}
-        onClick={() => navigate(`/product/${id}`)}
+        onClick={handleRedirectToProductPage}
         src={img}
         alt={name}
       />
-      <h2 className={s.root__title}>{name}</h2>
+      <h2 className={s.root__title} onClick={handleRedirectToProductPage}>
+        {name}
+      </h2>
       <p className={s.root__description}>{description}</p>
       <div className={s.footer}>
         <div className={s.footer_pricetag}>

@@ -12,11 +12,14 @@ export const selectedProductListSlice = createSlice({
   reducers: {
     add: (state, action) => {
       const addedProduct = action.payload;
-      // addedProduct.id = uniqueId();
+      addedProduct.productId = addedProduct.id;
+      addedProduct.id = uniqueId();
 
       state.list = [...state.list, addedProduct];
     },
     remove: (state, action) => {
+      console.log(state);
+      console.log(action);
       const resultArr = state.list.filter(
         (value) => value.id !== action.payload
       );

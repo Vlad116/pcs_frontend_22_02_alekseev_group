@@ -25,6 +25,16 @@
     align-items: center;
     gap: 20px;
 
+    &__username {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 21px;
+      max-width: 150px;
+      text-align: start;
+      margin-right: 16px;
+    }
+
     &__value {
       color: #fff;
       font-size: 17px;
@@ -54,5 +64,17 @@
     // &__icon {
     //   margin-bottom: 2px;
     // }
+  }
+
+  &__logout {
+    width: fit-content;
+    padding: 12px 76px;
+    margin-left: 22px;
+    background: transparent;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #d58c51;
+    border: 1px solid #d58c51;
   }
 }

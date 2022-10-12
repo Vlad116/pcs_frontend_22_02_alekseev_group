@@ -1,0 +1,71 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 460px;
+  height: 340px;
+  box-sizing: border-box;
+  padding: 8px 20px 34px;
+  background: #ffffff;
+  border: 1px solid #d58c51;
+
+  &__form_type_switcher {
+    align-self: flex-end;
+    text-decoration: underline;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 13px;
+    color: #d58c51;
+    cursor: pointer;
+  }
+
+  &__title {
+    padding-block: 16px 36px;
+    color: #161516;
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 38px;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    padding: 10px 18px;
+    width: 100%;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #161516;
+    border: 1px solid #d58c51;
+    border-radius: 61px;
+  }
+
+  &__checkbox_wrapper {
+    align-self: flex-start;
+    margin-bottom: 28px;
+    label {
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 13px;
+      color: #301411;
+    }
+  }
+
+  &__checkbox {
+    border-radius: 50%;
+    border: 1px solid #d58c51;
+  }
+
+  &__submit_btn {
+    background: #d58c51;
+    padding: 12px 77px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #131313;
+  }
+  &:hover {
+    background: #ffffff;
+    border: 1px solid #d58c51;
+  }
+}

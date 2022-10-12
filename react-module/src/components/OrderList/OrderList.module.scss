@@ -34,6 +34,7 @@
       width: 132px;
       height: 132px;
       margin-right: 88px;
+      cursor: pointer;
     }
 
     &__title {
@@ -42,8 +43,8 @@
       line-height: 21px;
       width: 310px;
       margin-right: auto;
-
       color: #ffffff;
+      cursor: pointer;
     }
 
     &__price {

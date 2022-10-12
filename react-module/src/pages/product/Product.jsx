@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import Header from "../../components/Header";
 import { products } from "../../components/ProductCardList/static";
 import ProductContent from "../../components/ProductContent/ProductContent";
-import { add } from "../../features/selectedProductsList/selectedProductsListSlice";
-import { increase } from "../../features/orderSum/orderSumSlice";
 
 import s from "./Product.module.scss";
 
