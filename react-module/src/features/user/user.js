@@ -2,12 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { nanoid as uniqueId } from "nanoid";
 import { getUsers, setUserToken, getUserToken } from "../../utils/lsHelpers";
 
+const usersFromLS = getUsers() || [];
 const tokenFromLS = getUserToken();
 
 const initialState = {
-  login: getUsers().find((value) => value.id === tokenFromLS)?.login || "",
+  login: usersFromLS.find((value) => value.id === tokenFromLS)?.login || "",
   currentUserToken: tokenFromLS || "", // for storing the JWT
-  users: getUsers() || [],
+  users: usersFromLS,
   //   userInfo: {}, // for user object
   //   loading: false,
   //   error: null,
