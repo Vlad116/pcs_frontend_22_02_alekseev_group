@@ -5,10 +5,11 @@
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
+  padding-top: 32px;
   padding-inline: 70px;
 
   &__img {
-    margin-bottom: 31px;
+    margin-left: 70px;
     // ~38-40%
     height: 500px;
     width: 500px;

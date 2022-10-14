@@ -7,7 +7,7 @@ import s from "./Main.module.scss";
 function Main() {
   return (
     <div className={s.root}>
-      <Header />
+      <Header title={"наша продукция"} />
       <ProductCardList />
     </div>
   );

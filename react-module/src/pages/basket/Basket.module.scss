@@ -11,45 +11,6 @@
     width: 100%;
   }
 
-  &__header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 52px 64px 0px;
-
-    &_back {
-      width: 30px;
-      height: 30px;
-      margin-right: 64px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #d58c51;
-      &:hover {
-        border: 1px solid #ffffff;
-      }
-
-      & img {
-        svg {
-          path {
-            fill: #ffffff;
-          }
-        }
-      }
-    }
-
-    &_title {
-      color: #fff;
-      font-size: 31px;
-      font-weight: 700;
-      line-height: 38px;
-      text-transform: uppercase;
-    }
-  }
-
   .footer {
     border-top: 1px solid #d58c51;
     width: 100%;

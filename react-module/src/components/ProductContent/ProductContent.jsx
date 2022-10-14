@@ -29,7 +29,7 @@ const ProductContent = ({ id, name, description, img, price, weight }) => {
 
   return (
     <div className={s.root}>
-      <img className={s.root__img} src={img} alt={name} />
+      <img className={s.root__img} src={`.${img}`} alt={name} />
       <div className={s.root__content}>
         <h2 className={s.root__title}>{name}</h2>
         <p className={s.root__description}>{description}</p>

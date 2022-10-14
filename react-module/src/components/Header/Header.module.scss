@@ -4,6 +4,27 @@
   font-family: "Montserrat";
   font-style: normal;
 
+  &__header_back {
+    width: 30px;
+    height: 30px;
+    margin-right: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffffff;
+
+    &:hover {
+      border: 1px solid #d58c51;
+
+      svg {
+        path {
+          fill: #d58c51;
+        }
+      }
+    }
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -23,6 +44,7 @@
   &_cart {
     display: flex;
     align-items: center;
+    margin-left: auto;
     gap: 20px;
 
     &__username {
@@ -32,7 +54,7 @@
       line-height: 21px;
       max-width: 150px;
       text-align: start;
-      margin-right: 16px;
+      margin-right: 8px;
     }
 
     &__value {

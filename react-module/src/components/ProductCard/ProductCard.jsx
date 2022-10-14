@@ -45,8 +45,7 @@ const ProductCard = ({ id, name, description, img, price, weight }) => {
       <p className={s.root__description}>{description}</p>
       <div className={s.footer}>
         <div className={s.footer_pricetag}>
-          {price}₽ /{" "}
-          <span className={s.footer_pricetag__weight}>{weight} г.</span>
+          {price}₽ / <span className={s.footer_pricetag__weight}>{weight}</span>
         </div>
         <button className={s.footer__add_btn} onClick={handleAddToBasketClick}>
           <BtnAddIcon />

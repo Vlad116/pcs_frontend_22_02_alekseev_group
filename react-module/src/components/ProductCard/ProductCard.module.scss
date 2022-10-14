@@ -1,12 +1,24 @@
+@import "../../styles/mixins/textShorten.scss";
+
 .root {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 312px;
   height: 552px;
   padding: 43px 21px 32px;
   box-sizing: border-box;
+  color: #ffffff;
   border: 1px solid #d58c51;
+
+  &:hover {
+    color: #d58c51;
+
+    .footer__add_btn {
+      background: #d58c51;
+      border: 1px solid #d58c51;
+    }
+  }
 
   &__img {
     margin-bottom: 31px;
@@ -20,7 +32,6 @@
     margin-bottom: 13px;
     text-align: start;
 
-    color: #ffffff;
     cursor: pointer;
   }
 
@@ -31,7 +42,7 @@
     max-height: 68px;
     text-align: start;
 
-    color: #ffffff;
+    @include textShorten(3);
   }
 
   .footer {
@@ -46,7 +57,6 @@
       font-size: 17px;
       line-height: 21px;
       /* identical to box height */
-      color: #ffffff;
 
       &__weight {
         font-weight: 400;

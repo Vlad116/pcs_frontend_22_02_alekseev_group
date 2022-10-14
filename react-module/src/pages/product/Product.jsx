@@ -33,7 +33,7 @@ const Product = () => {
 
   return (
     <div className={s.root}>
-      <Header />
+      <Header withBackLink />
       <ProductContent
         {...{
           productId,
