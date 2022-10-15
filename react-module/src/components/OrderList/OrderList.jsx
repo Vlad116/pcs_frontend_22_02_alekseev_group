@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import RemoveIcon from "../../resource/icons/btn-remove.svg";
+import { ReactComponent as RemoveIcon } from "../../resource/icons/btn-remove.svg";
 import s from "./OrderList.module.scss";
 
 import { remove } from "../../features/selectedProductsList/selectedProductsListSlice";
@@ -22,7 +22,9 @@ const OrderList = () => {
     dispatch(remove(id));
   };
 
-  const handleRedirectToProductPage = (id) => navigate(`/product/${id}`);
+  const handleRedirectToProductPage = (productId) => {
+    navigate(`/product/${productId}`);
+  };
 
   return (
     <div className={s.root}>
@@ -30,13 +32,13 @@ const OrderList = () => {
         {selectedProducts.map(({ name, img, price, id, productId }) => (
           <div className={s.root_product} key={id}>
             <img
-              onClick={() => handleRedirectToProductPage(id)}
+              onClick={() => handleRedirectToProductPage(productId)}
               className={s.root_product__img}
               src={img}
               alt={name}
             />{" "}
             <h2
-              onClick={() => handleRedirectToProductPage(id)}
+              onClick={() => handleRedirectToProductPage(productId)}
               className={s.root_product__title}
             >
               {name}
@@ -46,7 +48,7 @@ const OrderList = () => {
               className={s.root_product__remove_btn}
               onClick={() => handleRemoveFromSelectedClick(id, price)}
             >
-              <img src={RemoveIcon} />
+              <RemoveIcon />
             </button>
           </div>
         ))}

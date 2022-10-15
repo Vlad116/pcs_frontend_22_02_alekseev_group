@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import {
-  add,
-  getOrderSum,
-} from "../../features/selectedProductsList/selectedProductsListSlice";
+import { add } from "../../features/selectedProductsList/selectedProductsListSlice";
 import { ReactComponent as BtnAddIcon } from "../../resource/icons/btn-add.svg";
 
 import s from "./ProductCard.module.scss";
@@ -61,7 +58,7 @@ ProductCard.propTypes = {
   description: PropTypes.string,
   img: PropTypes.string,
   price: PropTypes.number.isRequired,
-  weight: PropTypes.number.isRequired,
+  weight: PropTypes.string.isRequired,
 };
 
 ProductCard.defaultProps = {

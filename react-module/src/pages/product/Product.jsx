@@ -20,14 +20,13 @@ const Product = () => {
 
   useEffect(() => {
     const product = products.find((value) => {
-      console.log(value);
       return value.id === productId;
     });
 
     product.price = +product.price;
 
     setProductData(product);
-  }, []);
+  }, [productId]);
 
   const { name, description, img, price, weight } = productData;
 

@@ -12,6 +12,7 @@ export const selectedProductListSlice = createSlice({
   reducers: {
     add: (state, action) => {
       const addedProduct = action.payload;
+      console.log(addedProduct);
       addedProduct.productId = addedProduct.id;
       addedProduct.id = uniqueId();
 

@@ -28,7 +28,7 @@ const Header = ({ title, withBackLink, isBasket }) => {
 
   const moveBack = () => navigate(-1);
 
-  // товар
+  // Получаем нужное окончание слова в зависимости от числа добавленных в корзину продуктов
   const productsCounterLabel = useMemo(() => {
     let n = productsCount % 100;
 
@@ -46,8 +46,7 @@ const Header = ({ title, withBackLink, isBasket }) => {
 
     return "товаров";
   }, [productsCount]);
-  console.log(login);
-  // 0 товаров, 1 товар, 2 товара,3,4, 5 товаров - 10, 100, 101 товар, 2,3,4, 105 товаров
+
   return (
     <header className={s.root}>
       <div className={s.root__inner}>
